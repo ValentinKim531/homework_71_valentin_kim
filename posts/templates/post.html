@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Post{% endblock %}
+{% block menu %}
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="card mb-3 modern">
+        <div class="row g-0">
+            <div class="col-md-6">
+                <img class="image_flex_product" src="{{ post.image.url }}" alt="post photo">
+            </div>
+            <div class="col-12 col-sm-12 col-lg-6">
+                <div class="card-body">
+                    <h1 class="card-title">Description: {{ post.description }}</h1>
+                    <p>Author: {{ post.author }}</p>
+                    <div>
+                        {% if user in post.user_likes.all %}
+                            <a href="{% url 'unlike' post.pk%}"><img src="{% static 'img/like.png' %}" alt="heart" height="25" width="25"></a>
+                        {% else %}
+                            <a href="{% url 'like' post.pk %}"><img src="{% static 'img/unlike.png' %}" alt="heart" height="25" width="25"></a>
+                        {% endif %}
+
+                    </div>
+                        <p>{{ post.user_likes.all.count }} отметок "Нравится"</p>
+
+                    <br><br>
+                    <h2>Comments:</h2>
+
+                    {% for comment in comments %}
+                    <div>
+                        <p><b>Comment author: {{ comment.author }} :</p>
+                        <div class="pre"><b>Review:</b> {{ comment.text }}</div>
+                    </div>
+                    <p>
+                        <a href="{% url 'comment_detail' comment.pk %}">See more..</a>
+                    </p>
+                    <br><br>
+                    {% empty %}
+                    <p>No reviews yet.</p>
+                    {% endfor %}
+                    <br><br>
+                    <p>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'post_comment_add' post.pk %}">Добавить комментарий...</a>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+

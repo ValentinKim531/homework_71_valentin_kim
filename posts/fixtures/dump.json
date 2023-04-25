@@ -1,0 +1,123 @@
+[
+{
+  "model": "posts.post",
+  "pk": 1,
+  "fields": {
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nam nisi nihil voluptatibus cum, commodi repudiandae quibusdam ducimus ipsa facilis facere doloremque reprehenderit temporibus vitae und",
+    "image": "posts/relax.jpg",
+    "author": 2,
+    "created_at": "2023-03-28T10:04:33.284Z",
+    "updated_at": "2023-03-28T10:04:33.284Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 2,
+  "fields": {
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nam nisi nihil voluptatibus cum",
+    "image": "posts/almaty.jpg",
+    "author": 2,
+    "created_at": "2023-03-28T10:04:52.740Z",
+    "updated_at": "2023-03-28T10:04:52.740Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 3,
+  "fields": {
+    "description": "Dignissimos totam, odit aut.",
+    "image": "posts/NY.jpg",
+    "author": 2,
+    "created_at": "2023-03-28T10:05:39.815Z",
+    "updated_at": "2023-03-28T10:05:39.815Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 4,
+  "fields": {
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nam nisi nihil voluptatibus cum, commodi repudiandae quibusdam ducimus ipsa facilis facere doloremque reprehenderit temporibus vitae und",
+    "image": "posts/spring.jpg",
+    "author": 1,
+    "created_at": "2023-03-28T10:06:10.561Z",
+    "updated_at": "2023-03-28T10:06:10.561Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 5,
+  "fields": {
+    "description": "Doloremque reprehenderit temporibus vitae unde",
+    "image": "posts/mountain.jpg",
+    "author": 1,
+    "created_at": "2023-03-28T10:06:27.713Z",
+    "updated_at": "2023-03-28T10:06:27.713Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 6,
+  "fields": {
+    "description": "no words....",
+    "image": "posts/ocean.jpeg",
+    "author": 1,
+    "created_at": "2023-03-28T10:06:44.904Z",
+    "updated_at": "2023-03-28T10:06:44.904Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 3,
+  "fields": {
+    "author": 1,
+    "post": 3,
+    "text": "Классное фото!!",
+    "created_at": "2023-03-28T10:46:43.487Z",
+    "updated_at": "2023-03-28T10:46:43.487Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 4,
+  "fields": {
+    "author": 1,
+    "post": 3,
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nam nisi nihil voluptatibus cum, commodi repudiandae quibusdam ducimus ipsa facilis facere doloremque reprehenderit temporibus vitae und",
+    "created_at": "2023-03-28T10:51:32.469Z",
+    "updated_at": "2023-03-28T10:51:32.469Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 5,
+  "fields": {
+    "author": 1,
+    "post": 3,
+    "text": "i love it!!!",
+    "created_at": "2023-03-28T11:03:08.773Z",
+    "updated_at": "2023-03-28T11:03:08.773Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 6,
+  "fields": {
+    "author": 1,
+    "post": 6,
+    "text": "ыфвфвыфыв",
+    "created_at": "2023-03-28T11:20:07.030Z",
+    "updated_at": "2023-03-28T11:20:07.030Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 7,
+  "fields": {
+    "author": 2,
+    "post": 6,
+    "text": "Apsa facilis facere doloremque reprehenderit temporibus vitae unde, dignissimos totam, odit aut.",
+    "created_at": "2023-03-28T11:37:45.924Z",
+    "updated_at": "2023-03-28T11:37:45.924Z"
+  }
+}
+]

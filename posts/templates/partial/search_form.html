@@ -1,0 +1,29 @@
+{% load django_bootstrap5 %}
+{% csrf_token %}
+
+<div class="container-fluid">
+{% if query %}
+<p class="find">Title containing "{{ query }}"
+    {% with results.count as total_results %}
+    found {{ total_results }} result {{ total_results|pluralize }}:</p>
+{% endwith %}
+<br><br>
+<div class="search-results row row-cols-1 row-cols-md-2 g-4">
+    {% for item in queryset %}
+    <div class="fw-bold">Title: {{ item.email }}</div>
+    </div>
+    {% empty %}
+    <p class="find">There are no results for your query.</p>
+    {% endfor %}
+    <span class="button_padding"><a href="{% url 'index' %}" class="btn btn-info">Search again</a></span>
+    {% else %}
+    <div class="input-group">
+        <form action="." method="get">
+            <label for="id_query"></label>
+            <input type="text" name="query" required="" id="id_query" placeholder="Enter">
+            <button type="submit" class="btn btn-outline-info">search</button>
+        </form>
+    </div>
+    {% endif %}
+</div>
+</div>

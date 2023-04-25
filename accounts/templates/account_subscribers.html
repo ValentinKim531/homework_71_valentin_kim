@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Subscribers{% endblock %}
+
+
+{% block content %}
+<div>Список подписчиков
+    <a href="{% url 'profile' user_obj.pk %}">
+    <b>{{ user_obj.username }}</b>
+</div>
+    </a>
+{% for subscriber in user_obj.subscribers.all %}
+<div>
+    <div class=" mb-5">
+        <a href="{% url 'profile' subscriber.pk %}">
+            {% if subscriber.avatar %}
+                <img class="rounded-circle" src="{{ subscriber.avatar.url }}" alt="image" height="50" width="50">
+            {% else %}
+                <img class="rounded-circle" src="{% static 'img/avatar-default.png' %}" alt="image" height="50" width="50">
+            {%endif%}
+            <h6 class="d-contents">@{{ subscriber.username }}</h6>
+        </a>
+    <div>
+<div>
+    <hr>
+{% endfor %}
+
+{% endblock %}
+

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+
+<div class="container-fluid">
+              <div class="tab-content">
+                <div id="home" class="container-fluid tab-pane active "><br>
+
+                    {% for item in accounts %}
+                    <div class="row justify-content-center">
+                        <div class="">
+                            <div class="card mx-auto custom-card" id="prova">
+                                <div class="row post-header col-12 py-2 px-3">
+
+                                    <a class="col-6 float-left" href="{% url 'profile' item.pk %}"><h4>{{ item.email }}</h4></a>
+                                    <a class="col-6 float-left" href="{% url 'profile' item.pk %}"><h4>{{ item.pk }}</h4></a>
+
+{#                                    <a class="nav-link active icons pic" aria-current="page" href="{% url 'profile' user.pk %}">Профиль#}
+{#              {% if user_obj.avatar %}#}
+{#              <img src="{{ user.avatar.url }}" class="image-4-column" width="50" height="50" alt="profile button">#}
+{#                  {% endif %}#}
+{#            </a>#}
+
+                            </div>
+                        </div>
+                    </div>
+                        {% empty %}
+                        <h3>Records not found</h3>
+                </div>
+                  {% endfor %}
+                </div>
+            </div>
+        </div>
+{% endblock %}

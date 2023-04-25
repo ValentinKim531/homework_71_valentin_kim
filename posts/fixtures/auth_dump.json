@@ -1,0 +1,48 @@
+[
+{
+  "model": "accounts.account",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$udsJ9yG2rQz8OAoarAOXNQ$2yI0/OkPwUKSgL99lBMXc9MGJg/OyuwpFpIYP/ECJGA=",
+    "last_login": "2023-03-28T11:28:56.392Z",
+    "is_superuser": true,
+    "username": "vvkim@mail.ru",
+    "first_name": "Valentin",
+    "last_name": "Kim",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-03-28T09:55:17.757Z",
+    "email": "vvkim@mail.ru",
+    "avatar": "user_pic/Kim_V.jpg",
+    "birth_date": "1982-01-20",
+    "groups": [],
+    "user_permissions": [],
+    "liked_posts": [],
+    "subscriptions": [],
+    "commented_posts": []
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$0jJMhQwcznOR3DaBRTBUwF$Pc+UBwLlHppplt2yITS/EpupZqNA+rA6jspC9WgsD1U=",
+    "last_login": "2023-03-28T11:42:01.331Z",
+    "is_superuser": false,
+    "username": "jane@mail.ru",
+    "first_name": "Jane",
+    "last_name": "Lee",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-03-28T10:01:49.973Z",
+    "email": "jane@mail.ru",
+    "avatar": "user_pic/face.jpg",
+    "birth_date": "2000-01-05",
+    "groups": [],
+    "user_permissions": [],
+    "liked_posts": [],
+    "subscriptions": [],
+    "commented_posts": []
+  }
+}
+  ]

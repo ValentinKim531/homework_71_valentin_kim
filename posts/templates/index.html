@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+
+<div class="container-fluid">
+              <div class="tab-content">
+                <div id="home" class="container-fluid tab-pane active "><br>
+
+                    {% for post in posts %}
+                    <div class="row justify-content-center">
+                        <div class="">
+                            <div class="card mx-auto custom-card" id="prova">
+                                <div class="row post-header col-12 py-2 px-3">
+                                    <div class="col-6 float-left "><h4>{{ post.author }}</h4></div>
+                                    <div class="col-6 float-right text-right post-number"><h4>
+                                        <a href="{% url 'post_detail' post.pk %}">•••</a>
+                                    </h4></div>
+                                </div>
+                                <img class="card-img" src="{{ post.image.url }}" alt="post image">
+                                <div class="card-body px-3">
+                                    <div>
+                                    {% if user in post.user_likes.all %}
+                                        <a href="{% url 'unlike' post.pk%}"><img src="{% static 'img/like.png' %}" alt="heart" height="25" width="25"></a>
+                                    {% else %}
+                                        <a href="{% url 'like' post.pk %}"><img src="{% static 'img/unlike.png' %}" alt="heart" height="25" width="25"></a>
+                                    {% endif %}
+                                        </div>
+                        <p>{{ post.user_likes.all.count }} отметок "Нравится"</p>
+                                    <p class="card-text"><b>{{ post.author }}</b> {{ post.description }}</p>
+                                </div>
+                                 <div class="row post-header px-3 pb-3">
+                                    {% if user.is_authenticated %}
+                                    <form action="{% url 'post_comment_add' post.pk %}" method="post">
+                                    {% csrf_token %}
+                                        {% bootstrap_button button_type="submit" content='Добавить комментарий...' %}
+                                    </form>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        {% empty %}
+                        <h3>Records not found</h3>
+                </div>
+                  {% endfor %}
+                </div>
+            </div>
+        </div>
+{% endblock %}
